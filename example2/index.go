@@ -66,6 +66,7 @@ func Index(forceIndex bool) {
 
 	if forceIndex {
 		err := os.RemoveAll(indexPath)
+		fmt.Printf("removing %s", indexPath)
 		if err != nil {
 			fmt.Println("Error removing existing index:", err)
 			panic(err)

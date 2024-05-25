@@ -1,7 +1,7 @@
 # eachapril
 
 Purpose:
-
+Learn [bleve](https://github.com/blevesearch/bleve?tab=readme-ov-file#-bleve)
 
 ## example usage
 
@@ -28,3 +28,9 @@ on windows:
 TBD
 
 ```
+
+
+## Links
+- https://blevesearch.com/
+- https://github.com/blevesearch/bleve?tab=readme-ov-file#-bleve
+- https://groups.google.com/g/bleve
