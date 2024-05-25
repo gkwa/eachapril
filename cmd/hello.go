@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"github.com/spf13/cobra"
 	"github.com/gkwa/eachapril/core"
+	"github.com/spf13/cobra"
 )
 
 // helloCmd represents the hello command
@@ -16,7 +16,7 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		core.Hello()
+		core.Run()
 	},
 }
 
