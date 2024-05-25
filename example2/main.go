@@ -58,7 +58,7 @@ func indexMarkdownFiles(indexPath, dirPath string) bleve.Index {
 	return bindex
 }
 
-func main() {
+func Run() {
 	indexPath := "markdown_index"
 	dirPath := "markdown_files"
 
