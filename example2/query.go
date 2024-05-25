@@ -4,14 +4,16 @@ import (
 	"fmt"
 
 	bleve "github.com/blevesearch/bleve/v2"
-	"github.com/davecgh/go-spew/spew"
 )
 
-func Run() {
+func Query() {
 	indexPath := "markdown_index"
-	dirPath := "markdown_files"
 
-	bindex := indexMarkdownFiles(indexPath, dirPath)
+	bindex, err := bleve.Open(indexPath)
+	if err != nil {
+		fmt.Println("Error opening index:", err)
+		panic(err)
+	}
 	defer bindex.Close()
 
 	query := bleve.NewQueryStringQuery("golang")
@@ -22,5 +24,11 @@ func Run() {
 		panic(err)
 	}
 
-	fmt.Println("Search Results:", spew.Sdump(searchResults))
+	fmt.Printf("Search Results: (%d matches)\n", searchResults.Total)
+	for _, hit := range searchResults.Hits {
+		file, ok := hit.Fields["Path"].(string)
+		if ok {
+			fmt.Printf("File: %s, Score: %f\n", file, hit.Score)
+		}
+	}
 }
