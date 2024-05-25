@@ -19,7 +19,7 @@ func Run() {
 	}
 	defer index.Close()
 
-	markdownDir := "markdown"
+	markdownDir := "testdata/markdown"
 	err = filepath.Walk(markdownDir, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return err

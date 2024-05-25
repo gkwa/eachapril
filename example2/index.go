@@ -62,7 +62,7 @@ func indexMarkdownFiles(indexPath, dirPath string) bleve.Index {
 
 func Index(forceIndex bool) {
 	indexPath := "markdown_index"
-	dirPath := "markdown_files"
+	dirPath := "testdata/markdown"
 
 	if forceIndex {
 		err := os.RemoveAll(indexPath)

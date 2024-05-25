@@ -9,7 +9,7 @@ import (
 
 func Run() {
 	indexPath := "markdown_index"
-	dirPath := "markdown_files"
+	dirPath := "testdata/markdown"
 
 	bindex := indexMarkdownFiles(indexPath, dirPath)
 	defer bindex.Close()
