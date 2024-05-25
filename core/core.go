@@ -11,7 +11,6 @@ import (
 
 func Run() {
 	mapping := bleve.NewIndexMapping()
-	mapping.DefaultField = "content"
 
 	index, err := bleve.New("example.bleve", mapping)
 	if err != nil {
@@ -44,7 +43,9 @@ func Run() {
 	}
 
 	query1 := bleve.NewMatchQuery("Go")
-	query2 := bleve.NewMatchQuery("code")
+	query1.SetField("_all")
+	query2 := bleve.NewMatchQuery("projects")
+	query2.SetField("_all")
 
 	conjunctionQuery := bleve.NewConjunctionQuery(query1, query2)
 
@@ -56,7 +57,11 @@ func Run() {
 	}
 
 	fmt.Println("Search Results:")
-	for _, hit := range searchResults.Hits {
-		fmt.Printf("Document: %s, Score: %f\n", hit.ID, hit.Score)
+	if len(searchResults.Hits) > 0 {
+		for _, hit := range searchResults.Hits {
+			fmt.Printf("Document: %s, Score: %f\n", hit.ID, hit.Score)
+		}
+	} else {
+		fmt.Println("No results found")
 	}
 }
