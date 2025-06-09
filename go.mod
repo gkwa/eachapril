@@ -7,7 +7,7 @@ toolchain go1.24.4
 require (
 	github.com/blevesearch/bleve/v2 v2.5.2
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc
-	github.com/go-git/go-git/v5 v5.16.1
+	github.com/go-git/go-git/v5 v5.16.2
 	github.com/magefile/mage v1.15.0
 	github.com/spf13/cobra v1.9.1
 	github.com/spf13/viper v1.20.1
