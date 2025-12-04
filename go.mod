@@ -9,7 +9,7 @@ require (
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc
 	github.com/go-git/go-git/v5 v5.16.4
 	github.com/magefile/mage v1.15.0
-	github.com/spf13/cobra v1.10.1
+	github.com/spf13/cobra v1.10.2
 	github.com/spf13/viper v1.21.0
 	github.com/taylormonacelli/goldbug v0.0.6
 )
