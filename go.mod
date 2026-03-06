@@ -2,7 +2,7 @@ module github.com/gkwa/eachapril
 
 go 1.24.0
 
-toolchain go1.26.0
+toolchain go1.26.1
 
 require (
 	github.com/blevesearch/bleve/v2 v2.5.7
